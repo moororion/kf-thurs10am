@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const OrderList = () => {
   const [pizzas, setPizzas] = useState([]);
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get('/api/pizza')
-      .then(response => {
-        setPizzas(response.data);
-        console.log('Pizzas fetched:', response.data); // Debug fetched data
-      })
+      .then(response => setPizzas(response.data))
       .catch(error => console.error('Error fetching pizzas:', error));
   }, []);
 
@@ -27,11 +26,18 @@ const OrderList = () => {
   };
 
   const calculateTotal = () => {
-    return cart.reduce((total, pizza) => total + Number(pizza.price || 0), 0);
+    return cart.reduce((total, pizza) => total + pizza.price, 0);
   };
 
   const handleNext = () => {
-    navigate('/order-list'); // Redirect to the order details page
+    dispatch({
+      type: 'SET_CART',
+      payload: {
+        pizzas: cart,
+        total: calculateTotal(),
+      },
+    });
+    navigate('/checkout'); 
   };
 
   return (
@@ -52,7 +58,7 @@ const OrderList = () => {
         ))}
       </div>
       <div className="cart-summary">
-        <h3>Total: ${calculateTotal().toFixed(2)}</h3> {/* Format total as fixed-point number */}
+        <h3>Total: ${calculateTotal()}</h3>
       </div>
       <button onClick={handleNext}>Next</button>
     </div>

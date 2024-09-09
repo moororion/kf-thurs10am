@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import OrderList from '../OrderList/OrderList';
-import axios from 'axios';
+import Checkout from '../Checkout/Checkout';
 import './App.css';
+
 function App() {
   return (
     <Router>
@@ -15,8 +16,8 @@ function App() {
         <p>Pizza is great.</p>
 
         <Routes>
-          <Route path="/" element={<OrderList />} /> {/* Default route to OrderList */}
-          {/* Add other routes as needed */}
+          <Route path="/" element={<OrderList />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
     </Router>
