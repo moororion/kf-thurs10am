@@ -1,4 +1,6 @@
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 // Whenever you have a form
 // You still need local react variables to track the user input
@@ -7,21 +9,13 @@ import { useState } from "react";
 const CustomerInfo = () => {
 
   const dispatch = useDispatch();
-
-
-  const [newCust, setNewCust] = useState({
-    Name: "Mel", 
-    Address: "12240 51st Ave N",
-    City: "Plymouth",
-    Zip: 55442,
-    Pickup: "False"
-  });
+  
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    dispatch({ type: 'ADD_CUST', payload: newCust });
-    setNewCust({});
+    dispatch({ type: 'ADD_CUST', payload:  });
+   
   }
 
   return (

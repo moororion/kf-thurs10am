@@ -38,6 +38,11 @@ axios({
 });
   };
 
+ 
+
+  };
+
+
 
 
   return (
@@ -46,7 +51,7 @@ axios({
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
     
-      <CustomerInfo />
+      <CustomerInfo newCust={newCust}/>
        
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
@@ -55,6 +60,6 @@ axios({
   
     </div>
   );
-}
+
 
 export default App;

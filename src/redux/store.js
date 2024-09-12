@@ -9,7 +9,15 @@ const getPizzaPost = (state = [], action) => {
   
   return state;
 };
+ 
+const newCust = (state =[{Name: "Mel", Address: "12240 51st Ave N", City: "Plymouth", Zip: 55442, Pickup: false }], action) => {
+  if (action.type === "ADD_CUST") {
+    return [...state, action.paylood]
 
+  }
+  return state;
+
+};
 
 const store = createStore(
   combineReducers({
