@@ -24,7 +24,7 @@ const OrderForm = () => {
 
       <form onSubmit={handleSubmit}>
         <input type='text' value={pizza} onChange={(evt) => setPizza(evt.target.value)}></input>
-        <button type='submit'>Submitv Order</button>
+        <button type='submit'>Submit Order</button>
       </form>
 
     </>
