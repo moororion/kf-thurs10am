@@ -14,7 +14,7 @@ const CustomerInfo = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    dispatch({ type: 'ADD_CUST', payload: Name:  });
+    dispatch({ type: 'ADD_CUST', payload:  });
    
   }
 
