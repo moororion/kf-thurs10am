@@ -16,9 +16,9 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-    
+
       <CustomerInfo />
-       
+
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
       <OrderForm />
