@@ -8,7 +8,7 @@ import CustomerInfo from '../CustomerInfo/CustomerInfo';
 
 function App() {
   return (
-    <Router> {/* Add Router here to wrap the routes */}
+    <Router> 
       <div className='App'>
         <header className='App-header'>
           <h1 className='App-title'>Prime Pizza</h1>
